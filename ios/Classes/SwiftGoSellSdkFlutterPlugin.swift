@@ -178,11 +178,10 @@ extension SwiftGoSellSdkFlutterPlugin: SessionDataSource {
       return nil
     }
     public var amount: Decimal {
-      if let amountString:String = argsSessionParameters?["amount"] as? String,
-        let amountDecimal: Decimal = Decimal(string:amountString) {
-        return amountDecimal
+      if let amountString:String = argsSessionParameters?["amount"] as? String {
+        return Decimal(string: amountString) ?? 0.0
       }
-      return 0
+      return 0.0
     }
     public var mode: TransactionMode{
       if let modeString:String = argsSessionParameters?["trxMode"] as? String {
