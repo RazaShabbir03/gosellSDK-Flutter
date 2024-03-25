@@ -54,7 +54,7 @@ class GoSellSdkFlutter {
   static void sessionConfigurations({
     required TransactionMode trxMode,
     required String transactionCurrency,
-    required String? amount,
+    String? amount,
     required Customer customer,
     required List<PaymentItem> paymentItems,
     required List<Tax> taxes,
